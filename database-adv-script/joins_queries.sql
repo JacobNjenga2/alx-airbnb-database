@@ -1,4 +1,4 @@
---📄 INNER JOIN:Retrieve all bookings and the respective users who made those bookings:
+-- INNER JOIN Retrieve all bookings and the respective users who made those bookings:
 SELECT
     b.booking_id,
     b.property_id,
@@ -28,13 +28,16 @@ FROM
 LEFT JOIN
     Review r
 ON
-    p.property_id = r.property_id;
+    p.property_id = r.property_id
+ORDER BY
+    p.property_id ASC, r.review_id ASC;
 
 
---📄 FULL OUTER JOIN:Retrieve all users and all bookings, even if:
---the user has no booking, or
 
---the booking is not linked to a user.
+-- FULL OUTER JOIN:Retrieve all users and all bookings, even if:
+-- the user has no booking, or
+
+-- the booking is not linked to a user.
 
 SELECT
     u.user_id,

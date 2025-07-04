@@ -5,6 +5,10 @@
 -- Initial Complex Query
 -- =========================================
 
+-- =========================================
+-- Initial Complex Query with WHERE
+-- =========================================
+
 SELECT
     b.booking_id,
     b.start_date,
@@ -21,7 +25,12 @@ FROM
     Booking b
 JOIN User u ON b.user_id = u.user_id
 JOIN Property p ON b.property_id = p.property_id
-LEFT JOIN Payment pay ON pay.booking_id = b.booking_id;
+LEFT JOIN Payment pay ON pay.booking_id = b.booking_id
+WHERE
+    b.start_date >= '2025-01-01'
+AND
+    u.role = 'guest';
+
 
 -- Analyze with EXPLAIN
 

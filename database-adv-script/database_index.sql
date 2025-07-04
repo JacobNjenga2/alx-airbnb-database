@@ -14,3 +14,19 @@ CREATE INDEX idx_booking_start_date ON Booking(start_date);
 -- Indexes on Property table
 CREATE INDEX idx_property_location ON Property(location);
 CREATE INDEX idx_property_id ON Property(property_id);
+
+-- =========================================
+-- Performance Check: Before and After
+-- =========================================
+
+-- Example query without index (run before creating indexes)
+-- (commented out here since indexes already created)
+-- EXPLAIN ANALYZE
+-- SELECT * FROM Booking WHERE user_id = 'some-uuid';
+
+-- Example query after creating index
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE user_id = 'some-uuid';
+

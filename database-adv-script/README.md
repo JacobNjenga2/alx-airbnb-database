@@ -15,3 +15,12 @@ This file contains SQL queries demonstrating the use of correlated and non-corre
 ## Queries Included:
 - Non-correlated: Find properties with an average rating > 4.0
 - Correlated: Find users who have made more than 3 bookings
+
+
+# Aggregations and Window Functions – Airbnb Clone
+
+This file contains SQL queries demonstrating aggregation functions and window functions for analytical purposes.
+
+## Queries Included:
+- Aggregation: Total number of bookings made by each user
+- Window Function: Rank properties by number of bookings using RANK()
